@@ -36,9 +36,9 @@ public class CalculatorTest {
 		Calculator calc = new Calculator();
 		calc.devide(5, 0);
 	}
-	@Test
-	public void 日付の比較() throws Exception {
-		Date date = new Date();
-		assertThat(date, is(dateOf(2021, 2, 10)));
-	}
+//	@Test
+//	public void 日付の比較() throws Exception {
+//		Date date = new Date();
+//		assertThat(date, is(dateOf(2021, 2, 10)));
+//	}
 }
