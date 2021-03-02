@@ -2,6 +2,9 @@ package junit.tutorial;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static junit.tutorial.IsDate.dateOf;
+
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -32,5 +35,10 @@ public class CalculatorTest {
 	public void devideで5と0のときIllegalArgumentExceptionを投げる() {
 		Calculator calc = new Calculator();
 		calc.devide(5, 0);
+	}
+	@Test
+	public void 日付の比較() throws Exception {
+		Date date = new Date();
+		assertThat(date, is(dateOf(2021, 2, 10)));
 	}
 }
