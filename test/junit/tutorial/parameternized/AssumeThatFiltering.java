@@ -29,4 +29,9 @@ public class AssumeThatFiltering {
 		// ※なお、見えないが本当はAssumptionViolatedExceptionが発生している。
 		assertThat(Member.canEntry(age, gender), is(true));
 	}
+	@Theory
+	public void canEntryは25歳以下の女性ではない場合にfalseを返す(int age, Gender gender) throws Exception {
+		assumeTrue(age > 25 && gender != Gender.FEMALE);
+		assertThat(Member.canEntry(age, gender), is(false));
+	}
 }
